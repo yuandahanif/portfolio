@@ -6,8 +6,9 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import { Navigation } from '../components';
 
-import { Page404 } from '../pages';
+import { Home, Page404, Project } from '../pages';
 
 interface IRoutesProps {
 }
@@ -15,8 +16,17 @@ interface IRoutesProps {
 const Routes: React.FunctionComponent<IRoutesProps> = (props) => {
   return (
     <Router>
+      <Navigation />
 
       <Switch>
+        <Route path="/project">
+          <Project />
+      </Route>
+        
+        <Route exact path="/" >
+          <Home />
+        </Route>
+
         <Route path="*">
           <Page404 />
         </Route>
