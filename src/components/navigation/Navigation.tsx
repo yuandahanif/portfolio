@@ -7,18 +7,35 @@ interface INavigationProps {
 
 const Navigation: React.FunctionComponent<INavigationProps> = (props) => {
   return (
-    <div>
-      <ul>
-        <li>
-          <Link to="/">
-            Home
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">
+              bio
           </Link>
-          <Link to="/project">
-            Projects
+          </li>
+          <li>
+            <Link to="/skill">
+              skills
           </Link>
-        </li>
-      </ul>
-    </div>
+          </li>
+          <li>
+
+            <Link to="/project">
+              projects
+          </Link>
+          </li>
+          <li>
+
+            <Link to="/contact">
+              contacts
+          </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
   );
 };
 

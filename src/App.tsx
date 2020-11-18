@@ -1,11 +1,11 @@
 import React from 'react';
 import Routes from './routes';
 
-import './styles/main.scss';
-
 function App() {
   return (
-    <Routes />
+    <div className="body-container">
+      <Routes />
+    </div>
   );
 }
 

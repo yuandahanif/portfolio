@@ -1,4 +1,26 @@
 @import './reset';
-
+@import './variables';
+@import '../components/navigation/navigation';
 
 // all pages styles will be placed here.
+// body-container
+.body-container {
+    display: flex;
+    flex-direction: column;
+    // background-image:  url(../assets/images/bg-bawah.png);
+    // background-position: bottom right;
+    // background-repeat:  no-repeat;
+    // background-size: auto;
+    min-height: 100vh;
+    padding: 1.5em 3em;
+}
+
+// nav
+@include navigationM;
+
+// main
+main {
+    margin: 2em;
+    background-color: salmon;
+    padding: 1em;
+}
