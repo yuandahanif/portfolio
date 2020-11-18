@@ -1,9 +1,61 @@
+@import '../../styles/variables';
+@import '../../styles/include-media';
+
 @mixin navigationM {
     header{
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+
+        .drawer-open-button {
+            display: inline-block;
+            padding: .6em;
+            min-height: 44px;
+            // background-color: red;
+            margin: 2em 2em 0;
+
+            @include media('>#{$tablet}') {
+                display: none;
+            }
+        }
+
         nav{
             // background-color: #404040;
+
+            @include media('<#{$tablet}') {
+                position: absolute;
+                background-color: white;
+                height: 100vh;
+                text-align: center;
+                padding: 2em 0em;
+                width: 40%;
+                min-width: 300px;
+                transform: translateX(320px);
+                box-shadow: .2em .2em .8em rgba(0, 0, 0, 0.452);
+                transition: .3s transform;
+
+                &.active {
+                    transform: translateX(0);
+                }
+            }
+
             ul{
                 display: flex;
+
+                @include media('<#{$tablet}') {
+                    flex-direction: column;
+                }
+
+                .drawer-close-button {
+                    // background-color: saddlebrown;
+                    display: none;
+                    width: 100%;
+                    text-align: center;
+                    
+                    @include media('<#{$tablet}') {
+                        display: inline-block;
+                    }
+                }
                 
                 a{
                     color: $black;
@@ -13,12 +65,18 @@
                     padding: 1em;
                     margin-right: 1em;
                     transition: .5s color;
-
+                    
                     &:hover{
                         color: $dark-grey;
+                    }
+                    
+                    @include media('<#{$tablet}') {
+                        margin-right: 0;
+                        width: 100%;
                     }
                 }
             }
         }
+        
     }
 }

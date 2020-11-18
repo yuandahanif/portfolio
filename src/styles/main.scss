@@ -1,5 +1,8 @@
 @import './reset';
 @import './variables';
+@import './include-media';
+
+// components
 @import '../components/navigation/navigation';
 
 // all pages styles will be placed here.
@@ -12,7 +15,12 @@
     // background-repeat:  no-repeat;
     // background-size: auto;
     min-height: 100vh;
+    min-width: 100%;
     padding: 1.5em 3em;
+    
+    @include media('<#{$tablet}') {
+        padding: 0em;
+    }
 }
 
 // nav
@@ -23,4 +31,10 @@ main {
     margin: 2em;
     background-color: salmon;
     padding: 1em;
+
+    .heading {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 2em;
+    }
 }
