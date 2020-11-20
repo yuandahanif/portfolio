@@ -33,8 +33,6 @@ const Project: React.FunctionComponent<IProjectProps> = (props) => {
                 </div>
               </div>
             ))}
-
-
           </div>
 
           {/* detail */}
@@ -64,9 +62,18 @@ const Project: React.FunctionComponent<IProjectProps> = (props) => {
                 <LanguageIcon name="css3" />
                 <LanguageIcon name="sass" />
               </div>
-              <h3 className="detail-subtitle" >
+              <h3 className="detail-subtitle mobile-text" >
                 See my other project
               </h3>
+            </div>
+
+            <div className="detail-action-container">
+              <a href="" className="detail-action-button-visit">
+                See Demo
+              </a>
+              <a href="" className="detail-action-button-source">
+                See Code
+              </a>
             </div>
           </div>
         </div>

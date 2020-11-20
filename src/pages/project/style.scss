@@ -9,6 +9,12 @@
     }
 }
 
+.mobile-text {
+    @include media('>#{$tablet}') {
+        display: none;
+    }
+}
+
 .card-container {
     margin: 0 1em;
     display: grid;
@@ -17,6 +23,10 @@
     grid-template-columns:  repeat(10, 8em);
     grid-template-rows: 160px;
     column-gap: 10px;
+    
+    @include media('>#{$tablet}') {
+        margin: 0;
+    }
     
     @include media('>#{$desktop}') {
         margin: 0;
@@ -32,9 +42,14 @@
         min-width: 8em;
         border-radius: .1em;
         border: .1px solid rgba(0, 0, 0, 0.486);
+        transition: .3s box-shadow;
         
         @include media('>#{$desktop}') {
             height: fit-content;
+
+            &:hover {
+                box-shadow: .2em .2em rgba(0, 0, 0, 0.582);
+            }
         }
 
         .card-img {
@@ -58,6 +73,13 @@
             display: inline-block;
             text-decoration: none;
             color: black;
+            transition: .2s color;
+        
+            @include media('>#{$desktop}') {
+                &:hover {
+                    color: $dark-grey;
+                }
+            }    
         }
         
         .card-description {
@@ -73,10 +95,16 @@
 .detail-container {
 
     @include media('>#{$desktop}') {
-        max-width: 50%;       
+        max-width: 50%;
+        border-radius: .1em;
+        border: .1px solid rgba(0, 0, 0, 0.486);
+        overflow: hidden;
     }
     .detail-image {
         // margin-bottom: 1em;
+        border-radius: .1em .1em 0 0;
+        border-bottom: .1px solid rgba(0, 0, 0, 0.486);
+        overflow: hidden;
 
         img {
             object-fit: cover;
@@ -97,7 +125,11 @@
     }
 
     .detail-description-container {
-        padding: 1em 1.5em;
+        padding: 1em 1em;
+        
+        @include media('>#{$tablet}') {
+            padding: 1em 1.5em;
+        }
 
         p {
             font-family: 'Roboto', sans-serif;
@@ -110,6 +142,49 @@
 
     .detail-tech-container {
         margin-bottom: 2em;
+    
+        @include media('>#{$desktop}') {
+            margin-bottom: 0;
+        }
+    }
+
+    .detail-action-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        padding: 1em 1em;
+        background-color: white;
+        
+        @include media('>#{$desktop}') {
+            box-shadow: none;
+            position: unset;
+            padding: 0 1em 1em;
+        }
+
+        a {
+            border-radius: .2em;
+            text-align: center;
+            margin: 0 .5em;
+            width: 100%;
+            display: inline-block;
+            padding: 1em 2em;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            min-height: 44px;
+            color: $black;
+        }
+
+        .detail-action-button-visit {
+            background-color: $light-blue;
+
+        }
+
+        .detail-action-button-source {
+            background-color: $lime-green;
+        }
     }
 
 }
