@@ -1,21 +1,49 @@
+@import '../../styles/variables';
+@import '../../styles/include-media';
+
 .project-container {
     flex-direction: column-reverse;
+    
+    @include media('>#{$desktop}') {
+        flex-direction: row;
+    }
 }
 
 .card-container {
-    display: flex;
+    margin: 0 1em;
+    display: grid;
     overflow-x: scroll;
+    max-height: 160px;
+    grid-template-columns:  repeat(10, 8em);
+    grid-template-rows: 160px;
+    column-gap: 10px;
+    
+    @include media('>#{$desktop}') {
+        margin: 0;
+        overflow: hidden;
+        max-height: unset;
+        grid-template-columns:  repeat(auto-fill, 8em);
+        grid-template-rows: repeat(auto-fill, 1fr);
+        column-gap: 10px;
+    }
 
     .card {
         margin: 0em .5em 1em;
-        border: .1px solid rgba(0, 0, 0, 0.486);
-        border-radius: .1em;
         min-width: 8em;
+        border-radius: .1em;
+        border: .1px solid rgba(0, 0, 0, 0.486);
         
+        @include media('>#{$desktop}') {
+            height: fit-content;
+        }
+
         .card-img {
+            border-radius: .1em .1em 0 0;
+            border-bottom: .1px solid rgba(0, 0, 0, 0.486);
             overflow: hidden;
             height: 5em;
             margin-bottom: .5em;
+
             img {
                 width: 100%;
                 height: 100%;
@@ -25,22 +53,28 @@
 
         .card-title {
             font-size: 1.2em;
+            margin: 0 .2em;
+            margin-bottom: .3em;
+            display: inline-block;
+            text-decoration: none;
+            color: black;
         }
-
-        .card-date {
-            font-size: .8em;
-            font-weight: normal;
-            font-family: 'Robotto';
-        }
-
+        
         .card-description {
-
+            font-size: .8em;    
+            font-family: 'Roboto', sans-serif;
+            margin: 0 .2em;
+            margin-bottom: .5em;
         }
     }
 }
 
 
 .detail-container {
+
+    @include media('>#{$desktop}') {
+        max-width: 50%;       
+    }
     .detail-image {
         // margin-bottom: 1em;
 
@@ -66,6 +100,7 @@
         padding: 1em 1.5em;
 
         p {
+            font-family: 'Roboto', sans-serif;
             font-size: .9em;
             line-height: 1.2;
             font-weight: normal;

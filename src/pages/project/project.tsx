@@ -24,12 +24,10 @@ const Project: React.FunctionComponent<IProjectProps> = (props) => {
                     <img src={dummyImage} alt="project name" />
                   </picture>
                 </div>
-                <h2 className="card-title">
+
+                <a href="/" className="card-title">
                   Res.to
-              </h2>
-                <span className="card-date">
-                  20-06-2002
-              </span>
+                </a>
                 <div className="card-description">
                   <p>Lorem ipsum dolor sit amet consectetur.</p>
                 </div>
