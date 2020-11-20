@@ -19,25 +19,25 @@ const Navigation: FunctionComponent<INavigationProps> = (props) => {
   )
   return (
     <header>
-      <a href="#" className="drawer-open-button"
+      <button className="drawer-open-button"
         onClick={toggleDrawer}>
         <Icon
           path={mdiDotsVertical}
           size={1}
           color="black"
         />
-      </a>
+      </button>
       <nav className={isDrawerOpen ? 'active' : ''}>
         <ul>
           <li>
-            <a href="#" className="drawer-close-button"
+            <button className="drawer-close-button"
             onClick={toggleDrawer}>
               <Icon
                 path={mdiClose}
                 size={1}
                 color="black"
               />
-            </a>
+            </button>
           </li>
           <li>
             <Link to="/">

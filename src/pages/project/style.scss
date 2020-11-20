@@ -1,0 +1,80 @@
+.project-container {
+    flex-direction: column-reverse;
+}
+
+.card-container {
+    display: flex;
+    overflow-x: scroll;
+
+    .card {
+        margin: 0em .5em 1em;
+        border: .1px solid rgba(0, 0, 0, 0.486);
+        border-radius: .1em;
+        min-width: 8em;
+        
+        .card-img {
+            overflow: hidden;
+            height: 5em;
+            margin-bottom: .5em;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .card-title {
+            font-size: 1.2em;
+        }
+
+        .card-date {
+            font-size: .8em;
+            font-weight: normal;
+            font-family: 'Robotto';
+        }
+
+        .card-description {
+
+        }
+    }
+}
+
+
+.detail-container {
+    .detail-image {
+        // margin-bottom: 1em;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    .detail-title {
+        font-size: 1.7em;
+        font-weight: bold;
+        margin-bottom: .2em;
+    }
+    
+    .detail-subtitle {
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-bottom: .2em;
+    }
+
+    .detail-description-container {
+        padding: 1em 1.5em;
+
+        p {
+            font-size: .9em;
+            line-height: 1.2;
+            font-weight: normal;
+            margin-bottom: 1.5em;
+        }
+    }
+
+    .detail-tech-container {
+        margin-bottom: 2em;
+    }
+
+}

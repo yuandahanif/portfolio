@@ -7,6 +7,12 @@
         justify-content: flex-end;
         position: relative;
 
+        button {
+            background-color: transparent;
+            outline: none;
+            border: none;
+        }
+
         .drawer-open-button {
             display: inline-block;
             padding: .6em;
